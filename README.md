@@ -35,6 +35,7 @@ g++ -std=c++17 -Wall -Wextra main.cpp -o ascii-menu
 ## What I practiced
 
 * strict and safe input validation (points 1 and 2)
-* basic use of `std::unordered_map`  
 * raw string literals. I used (R"( ... )") for ASCII art to avoid having to escape quotes and backslashes that are displayed in the art.
 * clean control flow without recursion  (points 3 and 4)
+* basic use of `std::unordered_map`
+* basic use of `std::array` instead of `std::unordered_map` for storing the ASCII art.  A hash map is only useful when you need key-based lookup, but in this project the menu uses fixed numeric positions (1–5). Since the number of art pieces is known at compile time, `std::array` is simpler and avoids the dynamic memory used by `std::vector`.
