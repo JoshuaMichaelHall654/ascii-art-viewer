@@ -35,7 +35,6 @@ g++ -std=c++17 -Wall -Wextra ascii.cpp -o ascii-menu
 ## What I practiced
 
 * strict and safe input validation (points 1 and 2)
-* basic use of `std::unordered_map`  
 * raw string literals. I used (R"( ... )") for ASCII art to avoid having to escape quotes and backslashes that are displayed in the art.
 * clean control flow without recursion  (points 3 and 4)
 * basic use of `std::unordered_map`
