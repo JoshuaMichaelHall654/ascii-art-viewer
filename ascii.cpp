@@ -2,7 +2,8 @@
 #include <limits>
 #include <string>
 #include <unordered_map>
-using namespace std;
+using std::cout, std::cin, std::endl, std::unordered_map, std::string,
+    std::numeric_limits, std::streamsize;
 
 // Have an unordered map to be a hashtable of the ascii art,
 // where we have strings as values and strings as keys.
