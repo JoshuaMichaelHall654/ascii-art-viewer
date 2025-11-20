@@ -29,7 +29,7 @@ Instead of having the menus call each other, `endMenu` returns a boolean indicat
 `startMenu` uses this return value to decide what to do next. This prevents the two functions from calling each other forever. Again, easier to trigger than 1 and 2.
 
 ## How to compile
-g++ -std=c++17 -Wall -Wextra main.cpp -o ascii-menu
+g++ -std=c++17 -Wall -Wextra ascii.cpp -o ascii-menu
 ./ascii-menu
 
 ## What I practiced
