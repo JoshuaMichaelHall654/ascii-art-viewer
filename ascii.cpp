@@ -2,9 +2,8 @@
 #include <iostream>
 #include <limits>
 #include <string>
-#include <unordered_map>
-using std::cout, std::cin, std::endl, std::unordered_map, std::string,
-    std::numeric_limits, std::streamsize, std::array;
+using std::cout, std::cin, std::endl, std::string, std::numeric_limits,
+    std::streamsize, std::array;
 
 // Have an array of strings to hold our ascii art. Have exactly 5 elements,
 // so no need for vector and its dyanmic memory allocation.
