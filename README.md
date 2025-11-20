@@ -38,6 +38,3 @@ g++ -std=c++17 -Wall -Wextra main.cpp -o ascii-menu
 * basic use of `std::unordered_map`  
 * raw string literals. I used (R"( ... )") for ASCII art to avoid having to escape quotes and backslashes that are displayed in the art.
 * clean control flow without recursion  (points 3 and 4)
-
-Example using g+
-
