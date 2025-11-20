@@ -1,18 +1,19 @@
+#include <array>
 #include <iostream>
 #include <limits>
 #include <string>
 #include <unordered_map>
 using std::cout, std::cin, std::endl, std::unordered_map, std::string,
-    std::numeric_limits, std::streamsize;
+    std::numeric_limits, std::streamsize, std::array;
 
-// Have an unordered map to be a hashtable of the ascii art,
-// where we have strings as values and strings as keys.
-unordered_map<string, string> asciiMap;
+// Have an array of strings to hold our ascii art. Have exactly 5 elements,
+// so no need for vector and its dyanmic memory allocation.
+// Assign ascii art later in makeAscii for better formatting
+array<string, 5> asciiArr;
 
 // Functions must be "prototyped" in C++ before main, or main will not recognize
 // them.
 void makeAscii();
-
 void startMenu();
 bool endMenu(const string& art);
 
@@ -66,27 +67,26 @@ void startMenu() {
     choice = firstInt - '0';
     switch (choice) {
       case 1:
-        // print the ascii. Get it using .at(), using [] would create keys if
-        // they dont already exist.
-        cout << asciiMap.at("frog") << endl;
+        // print the ascii from the array
+        cout << asciiArr[0] << endl;
         // set what art was printed for later
         art = "frog";
         // break the switch statement for the later endMenu check
         break;
       case 2:
-        cout << asciiMap.at("bulbasaur") << endl;
+        cout << asciiArr[1] << endl;
         art = "bulbasaur";
         break;
       case 3:
-        cout << asciiMap.at("linux penguin") << endl;
+        cout << asciiArr[2] << endl;
         art = "linux penguin";
         break;
       case 4:
-        cout << asciiMap.at("apple") << endl;
+        cout << asciiArr[3] << endl;
         art = "apple";
         break;
       case 5:
-        cout << asciiMap.at("earth") << endl;
+        cout << asciiArr[4] << endl;
         art = "earth";
         break;
       // All other cases are invalid.
@@ -172,14 +172,15 @@ bool endMenu(const string& art) {
 void makeAscii() {
   // R"()" forces all text, including characters like ' and "" to be displayed
   // as text instead of instruction.
-  asciiMap["frog"] = R"(
+  asciiArr = {
+      R"(
             (')-=-(')
           __(   "   )__
           / _/'-----'\_ \
       ___\\ \\     // //___
   jgs  >____)/_\---/_\(____<
-  )";
-  asciiMap["bulbasaur"] = R"(
+  )",
+      R"(
                                               /
                           _,.------....___,.' ',.-.
                       ,-'          _,.--"        |
@@ -208,8 +209,8 @@ void makeAscii() {
   .'          /| `-.        . ,'         ,           ,
   '-.__ __ _,','    '`-..___;-...__   ,.'\ ____.___.'
   `"^--'..'   '-`-^-'"--    `-^-'`.''"""""`.,^.`.--' mh
-  )";
-  asciiMap["linux penguin"] = R"(
+  )",
+      R"(
               .-"""-.
             '       \
             |,.  ,-.  |
@@ -228,15 +229,15 @@ void makeAscii() {
   |         `.    __.j         )
   |__        |--""___|      ,-'
     `"--...,+""""   `._,.-' mh
-  )";
-  asciiMap["apple"] = R"(
+  )",
+      R"(
     ,--./,-.
   / #      \
   |          |
   \        /    hjw
     `._,._,'
-  )";
-  asciiMap["earth"] = R"(
+  )",
+      R"(
              _____
           .-'.  ':'-.
         .''::: .:    '.
@@ -247,5 +248,5 @@ void makeAscii() {
        \       '::::   /
         '.      :::  .'
 jgs        '-.___'_.-'
-  )";
+  )"};
 }
